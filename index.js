@@ -3,11 +3,11 @@ import cors from "cors";
 import fs from "fs";
 import csvParser from "csv-parser";
 
-const App = express();
+const app = express();
 
-App.use(cors());
+app.use(cors());
 
-App.get("/", (_, res)=>{
+app.get("/", (_, res)=>{
   const result = [];
   fs.createReadStream("./WhatsgoodlyData-10.csv")
   .pipe(csvParser())
@@ -21,7 +21,7 @@ App.get("/", (_, res)=>{
 
 
 
-App.listen(3001);
+app.listen(3001);
 
 
 
